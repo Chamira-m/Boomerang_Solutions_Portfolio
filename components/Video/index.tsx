@@ -2,12 +2,10 @@
 
 import { useRef, useEffect, useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
-import Image from "next/image";
 
 const Video = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
-  const iframeRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -15,25 +13,19 @@ const Video = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsPlaying(true);
-            if (iframeRef.current) {
-              iframeRef.current.contentWindow.postMessage(
-                '{"event":"command","func":"playVideo","args":""}',
-                "*",
-              );
+            if (videoRef.current) {
+              videoRef.current.play();
             }
           } else {
             setIsPlaying(false);
-            if (iframeRef.current) {
-              iframeRef.current.contentWindow.postMessage(
-                '{"event":"command","func":"pauseVideo","args":""}',
-                "*",
-              );
+            if (videoRef.current) {
+              videoRef.current.pause();
             }
           }
         });
       },
       {
-        threshold: 0.5, // Adjust to pause/play when 50% of the video section is in view
+        threshold: 0.5, // Adjust threshold as needed
       },
     );
 
@@ -49,7 +41,7 @@ const Video = () => {
   }, []);
 
   return (
-    <section className="relative z-10 py-3 md:py-5 lg:py-10" ref={videoRef}>
+    <section className="relative z-10 py-3 md:py-5 lg:py-10">
       <div className="container">
         <SectionTitle
           title="Discover Our Expertise"
@@ -64,17 +56,18 @@ const Video = () => {
               className="wow fadeInUp mx-auto max-w-[770px] overflow-hidden rounded-md"
               data-wow-delay=".15s"
             >
-              <div className="relative aspect-[77/40] items-center justify-center">
-                <iframe
-                  ref={iframeRef}
+              <div className="relative aspect-[16/9] items-center justify-center">
+                <video
+                  ref={videoRef}
                   width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/5LrDIWkK_Bc?enablejsapi=1&autoplay=1&mute=1"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                  controls
+                  muted
+                  preload="auto"
+                  className="rounded-md"
+                >
+                  <source src="/video/Video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>

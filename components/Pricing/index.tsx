@@ -47,6 +47,7 @@ const Pricing = () => {
           <PricingBox
             packageName="Web & E-commerce Development"
             subtitle="Comprehensive web and e-commerce solutions to build your online presence."
+            startingPrice="$300"
           >
             <OfferList text="Custom Website Design" status="active" />
             <OfferList text="E-commerce Integration" status="active" />
@@ -57,6 +58,7 @@ const Pricing = () => {
           <PricingBox
             packageName="App Development"
             subtitle="Develop high-quality mobile apps tailored to your business needs."
+            startingPrice="$400"
           >
             <OfferList text="Native or Hybrid Apps" status="active" />
             <OfferList text="UI/UX Design" status="active" />
@@ -67,6 +69,7 @@ const Pricing = () => {
           <PricingBox
             packageName="Logo Design"
             subtitle="Unique and professional logo designs to enhance your brand identity."
+            startingPrice="$100"
           >
             <OfferList text="Custom Logo Design" status="active" />
             <OfferList text="Brand Identity Package" status="active" />
@@ -77,6 +80,7 @@ const Pricing = () => {
           <PricingBox
             packageName="Social Media Handling"
             subtitle="Manage and grow your social media presence with our expert handling."
+            startingPrice="$200"
           >
             <OfferList text="Social Media Strategy" status="active" />
             <OfferList text="Content Creation" status="active" />
@@ -85,8 +89,9 @@ const Pricing = () => {
             <OfferList text="Engagement Boosting" status="active" />
           </PricingBox>
           <PricingBox
-            packageName="Website + Logos"
+            packageName="Website Development + Logo Design"
             subtitle="Bundle package for a complete online presence including a website and logo design."
+            startingPrice="$350"
           >
             <OfferList text="Custom Website Design" status="active" />
             <OfferList text="Logo Design" status="active" />
@@ -95,8 +100,9 @@ const Pricing = () => {
             <OfferList text="Brand Identity Package" status="active" />
           </PricingBox>
           <PricingBox
-            packageName="Logo + Social Media"
+            packageName="Logo Design + Social Media Handling"
             subtitle="Perfect for businesses looking to enhance their brand identity and social media presence."
+            startingPrice="$250"
           >
             <OfferList text="Logo Design" status="active" />
             <OfferList text="Social Media Strategy" status="active" />
@@ -105,8 +111,9 @@ const Pricing = () => {
             <OfferList text="Performance Analytics" status="active" />
           </PricingBox>
           <PricingBox
-            packageName="Website + Logos + Social Media"
+            packageName="Web + Logo + Social Media"
             subtitle="Complete solution including a website, logo design, and social media handling."
+            startingPrice="$500"
           >
             <OfferList text="Custom Website Design" status="active" />
             <OfferList text="Logo Design" status="active" />

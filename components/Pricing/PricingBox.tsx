@@ -1,26 +1,72 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const PricingBox = (props: {
   packageName: string;
   subtitle: string;
+  startingPrice: string;
   children: React.ReactNode;
 }) => {
-  const { packageName, subtitle, children } = props;
+  const { packageName, subtitle, startingPrice, children } = props;
 
   return (
-    <div className="w-full">
+    <motion.div
+      className="w-full"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      whileHover={{ scale: 1.05 }}
+    >
       <div
-        className="wow fadeInUp relative z-10 rounded-sm bg-white px-8 py-10 shadow-three hover:shadow-one dark:bg-gray-dark dark:shadow-two dark:hover:shadow-gray-dark"
+        className="relative z-10 rounded-sm bg-white px-8 py-10 shadow-three hover:shadow-one dark:bg-gray-dark dark:shadow-two dark:hover:shadow-gray-dark"
         data-wow-delay=".1s"
       >
         <div className="flex items-center justify-between">
-          <h4 className="mb-2 text-xl font-bold text-dark dark:text-white">
+          {/* Animate the packageName */}
+          <motion.h4
+            className="mb-2 text-xl font-bold text-dark dark:text-white"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
             {packageName}
-          </h4>
+          </motion.h4>
         </div>
-        <p className="mb-7 text-base text-body-color">{subtitle}</p>
+
+        {/* Animate the subtitle */}
+        <motion.p
+          className="mb-7 text-base text-body-color"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+        >
+          {subtitle}
+        </motion.p>
+
+        {/* Animate the starting price */}
+        <motion.p
+          className="mb-2 text-lg font-semibold text-primary dark:text-white"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+        >
+          Starting at {startingPrice}
+        </motion.p>
+
         <div className="mb-8 border-b border-body-color border-opacity-10 pb-8 dark:border-white dark:border-opacity-10">
-          {/* Removed button */}
+          {/* Additional content */}
         </div>
-        <div>{children}</div>
+
+        {/* Animate the children content */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+        >
+          {children}
+        </motion.div>
+
         <div className="absolute bottom-0 right-0 z-[-1]">
           <svg
             width="179"
@@ -66,7 +112,7 @@ const PricingBox = (props: {
           </svg>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
