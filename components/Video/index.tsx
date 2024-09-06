@@ -65,7 +65,10 @@ const Video = () => {
                   preload="auto"
                   className="rounded-md"
                 >
-                  <source src="/video/Video.mp4" type="video/mp4" />
+                  <source
+                    src="https://drive.google.com/file/d/1SAX0dL-Psz0QvPnS76XOhmCrT0Q-GcFl/view?usp=drive_link"
+                    type="video/mp4"
+                  />
                   Your browser does not support the video tag.
                 </video>
               </div>
