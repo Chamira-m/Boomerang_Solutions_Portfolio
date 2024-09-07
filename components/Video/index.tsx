@@ -1,43 +1,39 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import SectionTitle from "../Common/SectionTitle";
+import Player from "@vimeo/player";
 
 const Video = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef(null);
+  const iframeRef = useRef(null);
+  const playerRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsPlaying(true);
-            if (videoRef.current) {
-              videoRef.current.play();
-            }
-          } else {
-            setIsPlaying(false);
-            if (videoRef.current) {
-              videoRef.current.pause();
-            }
-          }
-        });
-      },
-      {
-        threshold: 0.5, // Adjust threshold as needed
-      },
-    );
+    if (iframeRef.current) {
+      // Create the Vimeo player
+      playerRef.current = new Player(iframeRef.current);
 
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              playerRef.current.play(); // Play video when in view
+            } else {
+              playerRef.current.pause(); // Pause video when out of view
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+
+      observer.observe(iframeRef.current);
+
+      return () => {
+        if (iframeRef.current) {
+          observer.unobserve(iframeRef.current);
+        }
+      };
     }
-
-    return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
-      }
-    };
   }, []);
 
   return (
@@ -45,11 +41,10 @@ const Video = () => {
       <div className="container">
         <SectionTitle
           title="Discover Our Expertise"
-          paragraph="Watch our latest video to see how we leverage cutting-edge technology and innovative strategies to deliver exceptional results for our clients. Our team is dedicated to helping you achieve your goals with personalized solutions."
+          paragraph="Watch our latest video to see how we leverage cutting-edge technology and innovative strategies to deliver exceptional results for our clients."
           center
           mb="80px"
         />
-
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div
@@ -57,27 +52,20 @@ const Video = () => {
               data-wow-delay=".15s"
             >
               <div className="relative aspect-[16/9] items-center justify-center">
-                <video
-                  ref={videoRef}
+                <iframe
+                  ref={iframeRef}
+                  src="https://player.vimeo.com/video/1007168251?autoplay=0&muted=1"
                   width="100%"
-                  controls
-                  muted
-                  preload="auto"
-                  className="rounded-md"
-                >
-                  <source
-                    src="https://drive.google.com/file/d/1SAX0dL-Psz0QvPnS76XOhmCrT0Q-GcFl/view?usp=drive_link"
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
+                  height="100%"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 z-[-1] h-full w-full bg-[url(/images/video/shape.svg)] bg-cover bg-center bg-no-repeat"></div>
     </section>
   );
 };

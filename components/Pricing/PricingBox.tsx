@@ -51,7 +51,7 @@ const PricingBox = (props: {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          Starting at {startingPrice}
+          Starting from {startingPrice}
         </motion.p>
 
         <div className="mb-8 border-b border-body-color border-opacity-10 pb-8 dark:border-white dark:border-opacity-10">
