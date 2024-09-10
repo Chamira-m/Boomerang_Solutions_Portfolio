@@ -8,9 +8,12 @@ const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
 
   return (
-    <section id="pricing" className="relative z-10 py-3 md:py-5 lg:py-10">
-      <div className="container">
-        <motion.div
+    <section
+      id="pricing"
+      className="relative z-10 bg-gradient-to-r from-[#87c3b6] via-[#a3e4d7] to-[#eecc99] py-3 md:py-5 lg:py-10"
+    >
+      <div className="container mt-24">
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -36,7 +39,7 @@ const Pricing = () => {
             management, we offer tailored solutions to help your business
             thrive.
           </motion.p>
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -7,15 +7,17 @@ const ContactInfoBox = () => {
 
   return (
     <div
-      className="wow fadeInUp relative z-10 rounded-sm bg-white p-8 shadow-three dark:bg-gray-dark sm:p-11 lg:p-8 xl:p-11"
+      className="relative z-10 overflow-hidden rounded-sm bg-[#30336b] p-8 shadow-lg sm:p-11 lg:p-8 xl:p-11"
       data-wow-delay=".2s"
     >
-      <h3 className="mb-4 text-2xl font-bold leading-tight text-black dark:text-white">
+      <h3 className="mb-4 text-2xl font-bold leading-tight text-white">
         Contact Us
       </h3>
-      <p className="mb-2">For any inquiries, please feel free to contact us.</p>
+      <p className="mb-2 text-white">
+        For any inquiries, please feel free to contact us.
+      </p>
 
-      <div className="mb-8 border-b border-body-color border-opacity-25 pb-8 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25">
+      <div className="mb-8 border-b border-body-color border-opacity-25 pb-8 text-base leading-relaxed text-white dark:border-opacity-25">
         <p className="mb-3">
           Your time is valuable, and we will make sure to get back to you as
           soon as we can.
@@ -28,7 +30,7 @@ const ContactInfoBox = () => {
         <p className="mt-4 font-semibold">Email:</p>
         <p>
           <a
-            href="mailto:admin@seynar.com.au"
+            href="mailto:admin@boomerangsolutions.com.au"
             className="text-primary hover:underline"
           >
             admin@boomerangsolutions.com.au
@@ -39,7 +41,8 @@ const ContactInfoBox = () => {
         <p className="mt-4 font-semibold">Mobile:</p>
         <p>04 0923 4022</p>
       </div>
-      <div>
+
+      <div className="pointer-events-none absolute inset-0">
         <span className="absolute left-2 top-7">
           <svg
             width="57"
@@ -172,19 +175,14 @@ const ContactInfoBox = () => {
                 d="M4 73.9999C11 61.3332 30.7 34.7999 53.5 29.9999C82 23.9999 98 25.9999 109 14.4999C120 2.99986 129 -19.5001 152 -19.5001C175 -19.5001 190 -11.0001 203.5 -24.5001C217 -38.0001 213.5 -62.0001 247 -53.5001C273.8 -46.7001 310.167 -61 325 -69"
                 stroke="url(#paint2_linear_1028_603)"
               />
-              <path
-                opacity="0.45"
-                d="M41 40.9999C48 28.3332 67.7 1.79986 90.5 -3.00014C119 -9.00014 135 -7.00014 146 -18.5001C157 -30.0001 166 -52.5001 189 -52.5001C212 -52.5001 227 -44.0001 240.5 -57.5001C254 -71.0001 250.5 -95.0001 284 -86.5001C310.8 -79.7001 347.167 -94 362 -102"
-                stroke="url(#paint3_linear_1028_603)"
-              />
             </g>
             <defs>
               <linearGradient
                 id="paint0_linear_1028_603"
-                x1="0.5"
-                y1="-25.5"
-                x2="200.5"
-                y2="25.5"
+                x1="-0.571054"
+                y1="0.5"
+                x2="174.755"
+                y2="89.5"
                 gradientUnits="userSpaceOnUse"
               >
                 <stop
@@ -199,10 +197,10 @@ const ContactInfoBox = () => {
               </linearGradient>
               <linearGradient
                 id="paint1_linear_1028_603"
-                x1="0.5"
-                y1="-25.5"
-                x2="200.5"
-                y2="25.5"
+                x1="-0.571054"
+                y1="0.5"
+                x2="174.755"
+                y2="89.5"
                 gradientUnits="userSpaceOnUse"
               >
                 <stop
@@ -217,28 +215,10 @@ const ContactInfoBox = () => {
               </linearGradient>
               <linearGradient
                 id="paint2_linear_1028_603"
-                x1="0.5"
-                y1="-25.5"
-                x2="200.5"
-                y2="25.5"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0.62"
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#4A6CF7" : "#fff"}
-                  stopOpacity="0"
-                />
-              </linearGradient>
-              <linearGradient
-                id="paint3_linear_1028_603"
-                x1="0.5"
-                y1="-25.5"
-                x2="200.5"
-                y2="25.5"
+                x1="-0.571054"
+                y1="0.5"
+                x2="174.755"
+                y2="89.5"
                 gradientUnits="userSpaceOnUse"
               >
                 <stop

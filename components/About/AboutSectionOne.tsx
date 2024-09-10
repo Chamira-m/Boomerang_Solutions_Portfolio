@@ -1,4 +1,4 @@
-"use client"; // For using Framer Motion with Next.js
+"use client";
 
 import Image from "next/image";
 import SectionTitle from "../Common/SectionTitle";
@@ -12,8 +12,8 @@ const checkIcon = (
 
 const AboutSectionOne = () => {
   const List = ({ text }) => (
-    <p className="mb-5 flex items-center text-lg font-medium text-body-color">
-      <span className="mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
+    <p className="mb-5 flex items-center text-lg font-medium text-white">
+      <span className="mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md bg-white bg-opacity-20 text-white">
         {checkIcon}
       </span>
       {text}
@@ -21,10 +21,20 @@ const AboutSectionOne = () => {
   );
 
   return (
-    <section id="about" className="pt-16 md:pt-20 lg:pt-28">
+    <motion.section
+      id="about"
+      className="overflow-hidden bg-[#2e6d97] py-24 text-white lg:py-40 2xl:py-40"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      {/* <section
+      id="about"
+      className="bg-[#2e6d97] pt-16 text-white md:pt-20 lg:pt-28"
+    > */}
       <div className="container">
         <motion.div
-          className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28"
+          className="border-b border-white/[.15] pb-16 md:pb-20 lg:pb-28"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -83,7 +93,7 @@ const AboutSectionOne = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

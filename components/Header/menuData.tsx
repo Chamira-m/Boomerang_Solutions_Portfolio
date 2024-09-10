@@ -14,13 +14,32 @@ const menuData: Menu[] = [
     newTab: false,
   },
   {
-    id: 33,
+    id: 3,
     title: "Our Service",
+    newTab: false,
+    submenu: [
+      {
+        id: 31,
+        title: "Features",
+        path: "/services",
+        newTab: false,
+      },
+      {
+        id: 32,
+        title: "Portfolio",
+        path: "/",
+        newTab: false,
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Pricing",
     path: "/pricing",
     newTab: false,
   },
   {
-    id: 3,
+    id: 5,
     title: "Contact",
     path: "/contact",
     newTab: false,

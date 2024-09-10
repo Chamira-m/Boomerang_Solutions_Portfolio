@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import NewsLatterBox from "./NewsLatterBox";
+import ContactInfoBox from "./ContactInfoBox";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +25,7 @@ const Contact = () => {
   return (
     <motion.section
       id="contact"
-      className="overflow-hidden py-16 md:py-20 lg:py-28"
+      className="min-h-screen overflow-hidden bg-gradient-to-r from-[#87c3b6] via-[#a3e4d7] to-[#eecc99] py-24 lg:py-40 xl:py-24 2xl:py-32"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
@@ -39,13 +39,23 @@ const Contact = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="mb-12 rounded-sm bg-white px-8 py-11 shadow-three dark:bg-gray-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
-              <h2 className="mb-3 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
+            <div className="mb-12 rounded-lg bg-[#30336b] px-8 py-11 shadow-three sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
+              <motion.h2
+                className="mb-3 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl"
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
                 Need Help? Open a Ticket
-              </h2>
-              <p className="mb-12 text-base font-medium text-body-color">
+              </motion.h2>
+              <motion.p
+                className="mb-12 text-base font-medium text-body-color"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
                 Our support team will get back to you ASAP via email.
-              </p>
+              </motion.p>
 
               {/* Contact Form */}
               <form onSubmit={handleSubmit}>
@@ -114,14 +124,14 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          {/* Right Section (Newsletter Box) */}
+          {/* Right Section (Contact Info Box) */}
           <motion.div
             className="w-full px-4 lg:w-5/12 xl:w-4/12"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <NewsLatterBox />
+            <ContactInfoBox />
           </motion.div>
         </div>
       </div>

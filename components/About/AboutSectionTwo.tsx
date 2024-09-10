@@ -1,11 +1,11 @@
-"use client"; // For using Framer Motion with Next.js
+"use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 const AboutSectionTwo = () => {
   return (
-    <section className="py-16 md:py-20 lg:py-28">
+    <section className="bg-[#5970b6] py-16 text-white md:py-20 lg:py-28">
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-center">
           <motion.div
@@ -37,30 +37,30 @@ const AboutSectionTwo = () => {
           >
             <div className="max-w-[470px]">
               <div className="mb-9">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                <h3 className="mb-4 text-xl font-bold text-white sm:text-2xl lg:text-xl xl:text-2xl">
                   Cutting-Edge Technology
                 </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                <p className="text-base font-medium leading-relaxed text-white sm:text-lg sm:leading-relaxed">
                   We leverage the latest technologies to deliver solutions that
                   are both innovative and effective, ensuring your business
                   stays ahead in the digital landscape.
                 </p>
               </div>
               <div className="mb-9">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                <h3 className="mb-4 text-xl font-bold text-white sm:text-2xl lg:text-xl xl:text-2xl">
                   Dedicated Support
                 </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                <p className="text-base font-medium leading-relaxed text-white sm:text-lg sm:leading-relaxed">
                   Our team provides comprehensive support to ensure your
                   solutions are running smoothly and any issues are resolved
                   promptly.
                 </p>
               </div>
               <div className="mb-1">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                <h3 className="mb-4 text-xl font-bold text-white sm:text-2xl lg:text-xl xl:text-2xl">
                   Proven Expertise
                 </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                <p className="text-base font-medium leading-relaxed text-white sm:text-lg sm:leading-relaxed">
                   With extensive experience in web and mobile development, we
                   bring valuable insights and proven strategies to every
                   project.
