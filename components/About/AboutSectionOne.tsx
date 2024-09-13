@@ -48,7 +48,7 @@ const AboutSectionOne = () => {
             >
               <SectionTitle
                 title="Transforming Your Digital Experience"
-                paragraph="At Boomerang Solutions, we specialize in crafting high-quality websites and mobile apps tailored to your business needs. Our focus is on delivering innovative IT solutions that drive growth and enhance your online presence."
+                paragraph="At SeynarLab, we specialize in crafting high-quality websites and mobile apps tailored to your business needs. Our focus is on delivering innovative IT solutions that drive growth and enhance your online presence."
                 mb="44px"
               />
 

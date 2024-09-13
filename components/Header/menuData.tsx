@@ -16,21 +16,8 @@ const menuData: Menu[] = [
   {
     id: 3,
     title: "Our Service",
+    path: "/services",
     newTab: false,
-    submenu: [
-      {
-        id: 31,
-        title: "Features",
-        path: "/services",
-        newTab: false,
-      },
-      {
-        id: 32,
-        title: "Portfolio",
-        path: "/",
-        newTab: false,
-      },
-    ],
   },
   {
     id: 4,
@@ -40,6 +27,12 @@ const menuData: Menu[] = [
   },
   {
     id: 5,
+    title: "Portfolio",
+    path: "/portfolio",
+    newTab: false,
+  },
+  {
+    id: 6,
     title: "Contact",
     path: "/contact",
     newTab: false,

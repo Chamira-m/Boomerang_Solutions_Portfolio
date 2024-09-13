@@ -91,7 +91,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.8 }}
       >
-        Welcome to Boomerang Solutions
+        Welcome to SeynarLab
       </motion.h1>
 
       {/* Subtitle with animation */}
