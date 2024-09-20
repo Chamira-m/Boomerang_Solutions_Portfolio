@@ -20,10 +20,10 @@ const blogData: Blog[] = [
     title: "9 simple ways to improve your design skills",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
-    image: "/images/blog/pulse.png",
+    image: "/images/blog/seynar.png",
     author: {
       name: "Musharof Chy",
-      image: "/images/blog/pulse.png",
+      image: "/images/blog/seynar.png",
       designation: "Content Writer",
     },
     tags: ["computer"],
@@ -48,7 +48,7 @@ const blogData: Blog[] = [
     title: "Tips to quickly improve your coding speed.",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
-    image: "/images/blog/pulse.png",
+    image: "/images/blog/torenshal.png",
     author: {
       name: "Lethium Deo",
       image: "/images/blog/pulse.png",
