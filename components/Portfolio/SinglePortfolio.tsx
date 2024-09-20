@@ -3,13 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const SingleBlog = ({ blog }: { blog: Portfolio }) => {
-  const {
-    title,
-    image,
-    paragraph,
-    //  author, tags, publishDate
-  } = blog;
+const SinglePortfolio = ({ blog }: { blog: Portfolio }) => {
+  const { title, image, paragraph } = blog;
 
   // Motion variants for staggered animations
   const fadeInVariant = {
@@ -72,4 +67,4 @@ const SingleBlog = ({ blog }: { blog: Portfolio }) => {
   );
 };
 
-export default SingleBlog;
+export default SinglePortfolio;

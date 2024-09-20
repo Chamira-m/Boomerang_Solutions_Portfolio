@@ -4,6 +4,7 @@ import blogData from "@/components/Blog/blogData";
 import Blog from "@/components/Blog";
 
 import { Metadata } from "next";
+import Portfolio from "@/components/Portfolio";
 
 export const metadata: Metadata = {
   title: "Portfolio SeynarLabs - Explore Our Portfolio of Successful Projects",
@@ -19,7 +20,7 @@ const BlogPage = () => {
         pageName="Blog Grid"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
       /> */}
-      <Blog />
+      <Portfolio />
       {/* <div className="container">
         <div className="-mx-4 flex flex-wrap justify-center">
           {blogData.map((blog) => (

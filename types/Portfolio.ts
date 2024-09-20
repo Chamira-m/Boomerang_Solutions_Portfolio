@@ -4,12 +4,12 @@ type Author = {
   designation: string;
 };
 
-export type Blog = {
+export type Portfolio = {
   id: number;
   title: string;
   paragraph: string;
   image: string;
-  author: Author;
-  tags: string[];
-  publishDate: string;
+  // author: Author;
+  // tags: string[];
+  // publishDate: string;
 };

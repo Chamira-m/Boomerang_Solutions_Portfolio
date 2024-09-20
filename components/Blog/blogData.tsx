@@ -1,19 +1,19 @@
-import { Blog } from "@/types/blog";
+import { Portfolio } from "@/types/Portfolio";
 
-const blogData: Blog[] = [
+const blogData: Portfolio[] = [
   {
     id: 1,
     title: "Best UI components for modern websites",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
     image: "/images/blog/pulse.png",
-    author: {
-      name: "Samuyl Joshi",
-      image: "/images/blog/pulse.png",
-      designation: "Graphic Designer",
-    },
-    tags: ["creative"],
-    publishDate: "2025",
+    // author: {
+    //   name: "Samuyl Joshi",
+    //   image: "/images/blog/pulse.png",
+    //   designation: "Graphic Designer",
+    // },
+    // tags: ["creative"],
+    // publishDate: "2025",
   },
   {
     id: 2,
@@ -21,13 +21,13 @@ const blogData: Blog[] = [
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
     image: "/images/blog/s.png",
-    author: {
-      name: "Musharof Chy",
-      image: "/images/blog/seynar.png",
-      designation: "Content Writer",
-    },
-    tags: ["computer"],
-    publishDate: "2025",
+    // author: {
+    //   name: "Musharof Chy",
+    //   image: "/images/blog/seynar.png",
+    //   designation: "Content Writer",
+    // },
+    // tags: ["computer"],
+    // publishDate: "2025",
   },
   {
     id: 3,
@@ -35,13 +35,13 @@ const blogData: Blog[] = [
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
     image: "/images/blog/event.png",
-    author: {
-      name: "Lethium Deo",
-      image: "/images/blog/event.png",
-      designation: "Graphic Designer",
-    },
-    tags: ["design"],
-    publishDate: "2025",
+    // author: {
+    //   name: "Lethium Deo",
+    //   image: "/images/blog/event.png",
+    //   designation: "Graphic Designer",
+    // },
+    // tags: ["design"],
+    // publishDate: "2025",
   },
   {
     id: 4,
@@ -49,13 +49,13 @@ const blogData: Blog[] = [
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
     image: "/images/blog/t.png",
-    author: {
-      name: "Lethium Deo",
-      image: "/images/blog/pulse.png",
-      designation: "Graphic Designer",
-    },
-    tags: ["design"],
-    publishDate: "2025",
+    // author: {
+    //   name: "Lethium Deo",
+    //   image: "/images/blog/pulse.png",
+    //   designation: "Graphic Designer",
+    // },
+    // tags: ["design"],
+    // publishDate: "2025",
   },
 ];
 export default blogData;
