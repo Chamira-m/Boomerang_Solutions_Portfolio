@@ -6,8 +6,9 @@ import Blog from "@/components/Blog";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Blog Page for Startup Nextjs Template",
+  title: "Portfolio SeynarLabs - Explore Our Portfolio of Successful Projects",
+  description:
+    "Discover the innovative projects we've delivered at SeynarLabs. From custom software and mobile apps to IT solutions and logo designs, our portfolio showcases our expertise in helping businesses grow.",
   // other metadata
 };
 

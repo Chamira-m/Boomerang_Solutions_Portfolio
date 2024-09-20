@@ -12,8 +12,10 @@ import Video from "@/components/Video";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Next.js Template for Startup and SaaS",
-  description: "This is Home for Startup Nextjs Template",
+  title: "SeynarLabs - Innovative Software Development and IT Solutions",
+
+  description:
+    "SeynarLabs specializes in delivering custom software development, mobile apps, IT solutions, e-commerce platforms, social media management, and logo design to help businesses thrive in the digital age. We create innovative solutions tailored to your unique business needs.",
   // other metadata
 };
 

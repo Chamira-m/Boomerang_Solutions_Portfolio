@@ -5,8 +5,10 @@ import AboutSectionTwo from "@/components/About/AboutSectionTwo";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Page | Free Next.js Template for Startup and SaaS",
-  description: "This is About Page for Startup Nextjs Template",
+  title: "About SeynarLabs - Leaders in Software Engineering and IT Solutions",
+
+  description:
+    "Learn more about SeynarLabs and our mission to provide cutting-edge software development, IT solutions, and digital services. We are dedicated to helping businesses succeed with technology-driven innovation.",
   // other metadata
 };
 
