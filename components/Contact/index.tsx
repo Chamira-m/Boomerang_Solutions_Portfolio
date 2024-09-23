@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import ContactInfoBox from "./ContactInfoBox";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,8 +19,28 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic, e.g., sending data to a server or API
-    console.log("Form submitted:", formData);
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("All fields are required!");
+      return;
+    }
+    emailjs
+      .send(
+        "service_ko6sa4f", // Outlook Service ID
+        "template_x0h4c85", // Template ID
+        {
+          from_name: formData.name,
+          message: formData.message,
+          reply_to: formData.email,
+        },
+        "ioiNsMrKNGNVuWaZb", // Public API Key
+      )
+      .then((response) => {
+        // Refresh the page after successful submission
+        window.location.reload();
+      })
+      .catch((err) => {
+        alert("Failed to send email.");
+      });
   };
 
   return (
@@ -74,6 +95,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="Enter your name"
+                        required
                         className="w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
                       />
                     </div>
@@ -92,6 +114,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="Enter your email"
+                        required
                         className="w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
                       />
                     </div>
@@ -110,6 +133,7 @@ const Contact = () => {
                         onChange={handleInputChange}
                         rows={5}
                         placeholder="Enter your Message"
+                        required
                         className="w-full resize-none rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
                       ></textarea>
                     </div>

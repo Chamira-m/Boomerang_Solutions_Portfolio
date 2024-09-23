@@ -33,7 +33,7 @@ const ContactInfoBox = () => {
             href="mailto:admin@boomerangsolutions.com.au"
             className="text-primary hover:underline"
           >
-            admin@seynarlab.com.au
+            info@seynarlabs.com.au
           </a>
         </p>
         <p className="mt-4 font-semibold">Telephone:</p>
