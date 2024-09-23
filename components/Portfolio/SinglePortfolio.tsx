@@ -20,7 +20,7 @@ const SinglePortfolio = ({ blog }: { blog: Portfolio }) => {
   return (
     <>
       <motion.div
-        className="wow fadeInUp group relative overflow-hidden rounded-sm bg-white shadow-one duration-300 hover:shadow-two dark:bg-dark dark:hover:shadow-gray-dark"
+        className="wow fadeInUp group relative h-[450px] overflow-hidden rounded-sm bg-white shadow-one duration-300 hover:shadow-two dark:bg-dark dark:hover:shadow-gray-dark md:h-[600px] 2xl:h-[500px]"
         data-wow-delay=".1s"
         initial="hidden"
         animate="visible"
@@ -32,7 +32,7 @@ const SinglePortfolio = ({ blog }: { blog: Portfolio }) => {
         </Link>
 
         <motion.div
-          className="p-6 sm:p-8 md:px-6 md:py-8 lg:p-8 xl:px-5 xl:py-8 2xl:p-8"
+          className="p-6 sm:p-8 md:px-6 md:py-8 lg:p-8 xl:px-5 xl:py-8 2xl:p-8 "
           initial="hidden"
           animate="visible"
           variants={fadeInVariant}
