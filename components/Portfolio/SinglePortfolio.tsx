@@ -20,7 +20,7 @@ const SinglePortfolio = ({ blog }: { blog: Portfolio }) => {
   return (
     <>
       <motion.div
-        className="wow fadeInUp group relative h-[450px] overflow-hidden rounded-sm bg-white shadow-one duration-300 hover:shadow-two dark:bg-dark dark:hover:shadow-gray-dark md:h-[600px] 2xl:h-[500px]"
+        className="wow fadeInUp group relative h-[450px] overflow-hidden rounded-sm bg-white shadow-one duration-300 hover:shadow-two dark:bg-dark dark:hover:shadow-gray-dark md:h-[500px] xl:h-[475px] 2xl:h-[500px]"
         data-wow-delay=".1s"
         initial="hidden"
         animate="visible"
@@ -46,14 +46,14 @@ const SinglePortfolio = ({ blog }: { blog: Portfolio }) => {
           >
             <Link
               href="#"
-              className="mb-4 block text-xl font-bold text-black hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl"
+              className="mb-4 block text-xl font-bold text-black hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl md:text-xl"
             >
               {title}
             </Link>
           </motion.h3>
 
           <motion.p
-            className="mb-6 border-b border-body-color border-opacity-10 pb-6 text-base font-medium text-body-color dark:border-white dark:border-opacity-10"
+            className="mb-6 border-b border-body-color border-opacity-10 pb-6 text-base font-medium text-body-color dark:border-white dark:border-opacity-10 md:text-sm"
             initial="hidden"
             animate="visible"
             variants={fadeInVariant}

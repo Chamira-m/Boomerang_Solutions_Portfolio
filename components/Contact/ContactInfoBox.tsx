@@ -7,7 +7,7 @@ const ContactInfoBox = () => {
 
   return (
     <div
-      className="relative z-10 overflow-hidden rounded-sm bg-[#30336b] p-8 shadow-lg sm:p-11 lg:p-8 xl:p-11"
+      className="relative z-10 overflow-hidden rounded-sm bg-[#30336b] p-8 shadow-lg sm:p-11 lg:p-8 xl:p-7"
       data-wow-delay=".2s"
     >
       <h3 className="mb-4 text-2xl font-bold leading-tight text-white">
