@@ -19,7 +19,7 @@ const PricingBox = (props: {
       whileHover={{ scale: 1.05 }}
     >
       <div
-        className="relative z-10 rounded-sm bg-[#30336b] px-8 py-10 shadow-three hover:shadow-one dark:shadow-two dark:hover:shadow-gray-dark"
+        className="relative z-10 h-full rounded-sm bg-[#30336b] px-8 py-10 shadow-three hover:shadow-one dark:shadow-two dark:hover:shadow-gray-dark"
         data-wow-delay=".1s"
       >
         <div className="flex items-center justify-between">

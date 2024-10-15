@@ -10,7 +10,7 @@ const Pricing = () => {
   return (
     <section
       id="pricing"
-      className="relative z-10 bg-gradient-to-r from-[#87c3b6] via-[#a3e4d7] to-[#eecc99] py-3 md:py-5 lg:py-10"
+      className="relative z-10 bg-gradient-to-r from-[#87c3b6] via-[#a3e4d7] to-[#eecc99] py-3 md:py-5 lg:py-10 xl:-mt-7 2xl:-mt-0"
     >
       <div className="container mt-24">
         {/* <motion.div

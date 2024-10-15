@@ -23,7 +23,7 @@ const AboutSectionOne = () => {
   return (
     <motion.section
       id="about"
-      className="overflow-hidden bg-[#2e6d97] py-24 text-white lg:py-40 2xl:py-40"
+      className="overflow-hidden bg-[#2e6d97] py-24 text-white lg:py-40 xl:-mt-16 2xl:-mt-0 2xl:py-40"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}

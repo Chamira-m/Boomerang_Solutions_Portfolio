@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -7,37 +8,53 @@ import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 
 const Header = () => {
-  // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [sticky, setSticky] = useState(false);
+  const [openIndex, setOpenIndex] = useState(-1);
+  const [showOverlay, setShowOverlay] = useState(false);
+  const usePathName = usePathname();
+
   const navbarToggleHandler = () => {
-    setNavbarOpen(!navbarOpen);
+    setNavbarOpen((prev) => {
+      const newState = !prev;
+      setShowOverlay(newState);
+      return newState;
+    });
   };
 
-  // Sticky Navbar
-  const [sticky, setSticky] = useState(false);
   const handleStickyNavbar = () => {
-    if (window.scrollY >= 80) {
-      setSticky(true);
-    } else {
-      setSticky(false);
-    }
+    setSticky(window.scrollY >= 80);
   };
+
+  useEffect(() => {
+    const cleanup = () => {
+      document.body.style.overflow = "";
+    };
+
+    if (navbarOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      cleanup();
+    }
+
+    return cleanup;
+  }, [navbarOpen]);
+
   useEffect(() => {
     window.addEventListener("scroll", handleStickyNavbar);
-    return () => window.removeEventListener("scroll", handleStickyNavbar);
+    return () => {
+      window.removeEventListener("scroll", handleStickyNavbar);
+    };
   }, []);
 
-  // submenu handler
-  const [openIndex, setOpenIndex] = useState(-1);
   const handleSubmenu = (index) => {
-    if (openIndex === index) {
-      setOpenIndex(-1);
-    } else {
-      setOpenIndex(index);
-    }
+    setOpenIndex(openIndex === index ? -1 : index);
   };
 
-  const usePathName = usePathname();
+  const handleOverlayClick = () => {
+    setNavbarOpen(false);
+    setShowOverlay(false);
+  };
 
   return (
     <header
@@ -98,10 +115,10 @@ const Header = () => {
               </button>
               <nav
                 id="navbarCollapse"
-                className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-[#3498db] px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-[#1abc9c] lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
+                className={`navbar fixed right-0 top-0 z-50 h-screen w-[250px] overflow-y-auto bg-[#3498db] px-6 py-4 duration-300 ease-in-out dark:bg-[#1abc9c] lg:visible lg:static lg:h-auto lg:w-auto lg:bg-transparent lg:p-0 lg:opacity-100 ${
                   navbarOpen
-                    ? "visibility top-full opacity-100"
-                    : "invisible top-[120%] opacity-0"
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-full opacity-0 lg:translate-x-0"
                 }`}
               >
                 <ul className="block lg:flex lg:space-x-12">
@@ -115,6 +132,7 @@ const Header = () => {
                               ? "text-white dark:text-white"
                               : "text-[#ecf0f1] hover:text-white dark:text-white/70 dark:hover:text-white"
                           }`}
+                          onClick={() => setNavbarOpen(false)}
                         >
                           {menuItem.title}
                         </Link>
@@ -141,11 +159,12 @@ const Header = () => {
                               openIndex === index ? "block" : "hidden"
                             }`}
                           >
-                            {menuItem.submenu.map((submenuItem, index) => (
+                            {menuItem.submenu.map((submenuItem, subIndex) => (
                               <Link
                                 href={submenuItem.path}
-                                key={index}
+                                key={subIndex}
                                 className="block rounded py-2.5 text-sm text-[#ecf0f1] hover:text-white dark:text-white/70 dark:hover:text-white lg:px-3"
+                                onClick={() => setNavbarOpen(false)}
                               >
                                 {submenuItem.title}
                               </Link>
@@ -158,26 +177,18 @@ const Header = () => {
                 </ul>
               </nav>
             </div>
-            {/* <div className="flex items-center justify-end pr-16 lg:pr-0">
-              <Link
-                href="/signin"
-                className="hidden px-7 py-3 text-base font-medium text-[#ecf0f1] hover:opacity-70 dark:text-white md:block"
-              >
-                Sign In
-              </Link>
-              <Link
-                href="/signup"
-                className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-[#3498db] px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
-              >
-                Sign Up
-              </Link>
-              <div>
-                <ThemeToggler />
-              </div>
-            </div> */}
+            <div className="hidden items-center justify-end lg:flex">
+              <ThemeToggler />
+            </div>
           </div>
         </div>
       </div>
+      {showOverlay && navbarOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black bg-opacity-50"
+          onClick={handleOverlayClick}
+        ></div>
+      )}
     </header>
   );
 };

@@ -8,7 +8,7 @@ const Features = () => {
   return (
     <motion.section
       id="contact"
-      className="min-h-screen overflow-hidden bg-gradient-to-r from-[#87c3b6] via-[#a3e4d7] to-[#eecc99] py-32 2xl:py-28"
+      className="min-h-screen overflow-hidden bg-gradient-to-r from-[#87c3b6] via-[#a3e4d7] to-[#eecc99] py-32 xl:py-10 2xl:py-28"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
